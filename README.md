@@ -18,11 +18,11 @@ To do this, we'll break the text into chunks of seq_length+1. Suppose seq_length
 
 6-Generating new music: 
 
-    a-Initialize a "seed" start string and the RNN state, and set the number of characters we want to generate.
+   a-Initialize a "seed" start string and the RNN state, and set the number of characters we want to generate.
   
-    b-Use the start string and the RNN state to obtain the probability distribution of the next predicted character.
+   b-Use the start string and the RNN state to obtain the probability distribution of the next predicted character.
   
-    c-Sample from multinomial distribution to calculate the index of the predicted character. This predicted character is then used as the next input to the model.
+   c-Sample from multinomial distribution to calculate the index of the predicted character. This predicted character is then used as the next input to the model.
   
-    d-At each time step, the updated RNN state returned is fed back into the model, so that it now has more context. After predicting the next character, the updated RNN states are again fed back into the model, which is how it learns sequence dependencies in the data, as it gets more information from the previous predictions.
+   d-At each time step, the updated RNN state returned is fed back into the model, so that it now has more context. After predicting the next character, the updated RNN states are again fed back into the model, which is how it learns sequence dependencies in the data, as it gets more information from the previous predictions.
 
